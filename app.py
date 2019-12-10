@@ -8,7 +8,7 @@ CORS(app)
 app.config['SECRET_KEY'] = 'secret!'
 app.config['DEBUG'] = True
 app.config['CORS_HEADERS'] = 'Content-Type'
-socketio = SocketIO(app, logger=True, engineio_logger=True, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 @app.route('/notify', methods = ['POST', 'GET'])
