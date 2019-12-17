@@ -20,17 +20,17 @@ def test():
         notification = data['notification']
         user_id = data['user_id']
         action = data['action']
+        url = data['url']
         if action == 'new_offer':
-            print('There is a new offer')
-            socketio.emit('new_offer', {'notification': notification, 'user_id':user_id}, namespace='/new_offer')
+            socketio.emit('new_offer', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'new_request':
-            socketio.emit('new_request', {'notification': notification, 'user_id':user_id}, namespace='/new_request')
+            socketio.emit('new_request', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_request')
         elif action == 'ofer_accepted':
-            socketio.emit('offer_accepted', {'notification': notification, 'user_id':user_id}, namespace='/offer_accepted')
+            socketio.emit('offer_accepted', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/offer_accepted')
         elif action == 'offer_rejected':
-            socketio.emit('offer_rejected', {'notification': notification, 'user_id':user_id}, namespace='/offer_rejected')
+            socketio.emit('offer_rejected', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/offer_rejected')
         elif action == 'counter_offer':
-            socketio.emit('counter_offer', {'notification': notification, 'user_id':user_id}, namespace='/counter_offer')
+            socketio.emit('counter_offer', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/counter_offer')
     return render_template('index.html')
 
 @socketio.on('connect', namespace='/test')
