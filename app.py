@@ -25,7 +25,7 @@ def test():
             socketio.emit('new_offer', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'new_request':
             socketio.emit('new_request', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
-        elif action == 'ofer_accepted':
+        elif action == 'offer_accepted':
             socketio.emit('offer_accepted', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'offer_rejected':
             socketio.emit('offer_rejected', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
