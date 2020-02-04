@@ -31,6 +31,9 @@ def test():
             socketio.emit('offer_rejected', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'counter_offer':
             socketio.emit('counter_offer', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
+        elif action == 'DELIVERY':
+            socketio.emit('DELIVERY', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')            
+
     return render_template('index.html')
 
 @socketio.on('connect', namespace='/test')
