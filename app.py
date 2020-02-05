@@ -32,7 +32,9 @@ def test():
         elif action == 'counter_offer':
             socketio.emit('counter_offer', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'DELIVERY':
-            socketio.emit('DELIVERY', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')            
+            socketio.emit('DELIVERY', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
+        elif action == 'schedule':
+            socketio.emit('schedule', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')            
 
     return render_template('index.html')
 
