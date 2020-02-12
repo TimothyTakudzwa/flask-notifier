@@ -34,7 +34,9 @@ def test():
         elif action == 'DELIVERY':
             socketio.emit('DELIVERY', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
         elif action == 'schedule':
-            socketio.emit('schedule', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')            
+            socketio.emit('schedule', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')
+        elif action == 'schedule_reminder':
+            socketio.emit('schedule_reminder', {'notification': notification, 'user_id':user_id, 'url':url}, namespace='/new_offer')                 
 
     return render_template('index.html')
 
